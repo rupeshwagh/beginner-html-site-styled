@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beginner-html-site
+  labels:
+    app: beginner-html-site
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: beginner-html-site
+  template:
+    metadata:
+      labels:
+        app: beginner-html-site
+    spec:
+      containers:
+        - name: beginner-html-site
+          image: rupesh97669/beginner-html-site-styled:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
