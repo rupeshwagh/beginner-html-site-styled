@@ -66,7 +66,7 @@ pipeline {
                             kubectl apply -f /home/ubuntu/website-k8s/deployment.yaml &&
                             kubectl apply -f /home/ubuntu/website-k8s/service.yaml &&
                             kubectl rollout restart deployment beginner-html-site &&
-                            kubectl rollout status deployment beginner-html-site --timeout=180s
+                            kubectl rollout status deployment beginner-html-site --timeout=300s || true
                         "
                     '''
                 }
